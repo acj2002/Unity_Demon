@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{5ADC4013-AED0-382E-D7B2-9D461E1338ED}</ProjectGuid>
+    <ProjectGuid>{05018937-8228-2982-19A1-4B21AA8A99ED}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scenes\Code\Player.cs" />
+    <Compile Include="Assets\Scenes\Code\codeBoss\Bossattack.cs" />
     <Compile Include="Assets\Scenes\Code\EnemyFiy.cs" />
     <Compile Include="Assets\Scenes\Code\monattack.cs" />
     <Compile Include="Assets\Scenes\HP Bar\HP Bar Boss.cs" />
@@ -70,7 +71,8 @@
     <Compile Include="Assets\Scenes\HP Bar\HP Bar.cs" />
     <Compile Include="Assets\Scenes\Code\Bullet.cs" />
     <Compile Include="Assets\Scenes\Code\Shooting.cs" />
-    <Compile Include="Assets\Scenes\Code\Boss.cs" />
+    <Compile Include="Assets\Scenes\Code\codeBoss\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Scenes\Code\codeBoss\Boss.cs" />
     <Compile Include="Assets\Scenes\Code\startfly.cs" />
   </ItemGroup>
   <ItemGroup>

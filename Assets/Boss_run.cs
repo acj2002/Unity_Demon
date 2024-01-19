@@ -6,17 +6,22 @@ public class Boss_run : StateMachineBehaviour
 {
 	public float speed = 2.5f;
 	public float attackRange = 3f;
+	private int rand;
 
 	Transform player;
 	Rigidbody2D rb;
 	Boss boss;
 
+
 	// OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
+		rand = Random.Range(0, 2);
 		player = GameObject.FindGameObjectWithTag("Player").transform;
 		rb = animator.GetComponent<Rigidbody2D>();
 		boss = animator.GetComponent<Boss>();
+
+
 
 	}
 
@@ -32,14 +37,22 @@ public class Boss_run : StateMachineBehaviour
 		if (Vector2.Distance(player.position, rb.position) <= attackRange)
 		{
 			animator.SetTrigger("attack");
+		}else
+        {
+			animator.SetTrigger("Fly");
 		}
+
+		
+					
+
+        
+
+
 	}
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
-		animator.ResetTrigger("idle");
+		
 	}
-
-
 }

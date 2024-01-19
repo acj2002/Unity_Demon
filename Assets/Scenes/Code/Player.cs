@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
 
     private bool canDash = true;
     private bool isDashing;
-    private float dashingPower = 5f;
+    private float dashingPower = 200f;
     private float dashingTime = 0.2f;
     private float dashingColldown = 1f;
 
@@ -50,9 +50,14 @@ public class Player : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             takeDamage(20);
+        }
+
+        if(currentHealth <=0)
+        {
+            anim.SetTrigger("die");
         }
 
         dirX = Input.GetAxisRaw("Horizontal");
@@ -63,6 +68,7 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isJumping == false)
         {
           rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+           anim.SetTrigger("jump");
         }
 
 
@@ -79,6 +85,7 @@ public class Player : MonoBehaviour
         {
             anim.SetBool("run", true);
         }
+
 
         UpdateAnimatiorUpdate();
         
@@ -160,6 +167,7 @@ public class Player : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.setHp(currentHealth);
+        anim.SetTrigger("hit");
 
     }
 
